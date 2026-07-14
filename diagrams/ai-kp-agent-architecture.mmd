@@ -1,0 +1,18 @@
+flowchart LR
+  A[飞书群玩家 @AI-KP] --> B[Feishu Bot Adapter]
+  B --> C[AI KP Orchestrator]
+  C --> D[Local Campaign Knowledge]
+  C --> E[Rule / Dice Engine]
+  C --> F[Scene State Engine]
+  C --> O[LLM Generation Layer]
+  D --> G{信息权限}
+  G -->|public| H[开场可见信息]
+  G -->|revealed| I[已发现线索]
+  G -->|private / keeper / secret| J[KP 隐藏资料]
+  J --> K{是否授权 KP 指令}
+  K -->|是| C
+  K -->|否| L[拒绝剧透并引导调查动作]
+  E --> C
+  F --> C
+  O --> M[以 KP 口吻回复飞书群]
+  C --> N[写回 revealed / session 状态]

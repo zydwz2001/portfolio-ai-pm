@@ -1,0 +1,19 @@
+flowchart LR
+  A[原始简历/简历库] --> B[结构化 resume.yaml]
+  B --> C[用户提供投递链接]
+  C --> D[Codex Skill 读取 SOP / 路径 / 规则]
+  D --> E[打开岗位页并推进到申请入口]
+  E --> F{是否需要人工动作}
+  F -->|登录/验证码/附件| G[用户手动完成]
+  F -->|无需| H[扫描申请表字段]
+  G --> I[保留附件并清空不可信解析字段]
+  I --> H
+  H --> J[字段分类 fill / review / skip]
+  J --> K[从 resume.yaml 填充安全字段]
+  K --> L[报告缺失信息]
+  L --> M{用户是否补充稳定事实}
+  M -->|是| N[写回 resume.yaml]
+  M -->|否| O[标记为空/人工处理]
+  N --> P[沉淀 rules / SOP / handoff]
+  O --> P
+  P --> Q[停在最终提交前]

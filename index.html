@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>韩菁芸｜产品作品集</title>
+  <style>
+    :root {
+      --ink: #f5f7ff;
+      --muted: #b7c2d8;
+      --subtle: #74819a;
+      --line: rgba(122, 151, 255, 0.26);
+      --bg: #03050d;
+      --paper: #070b18;
+      --navy: #f7f9ff;
+      --blue: #55a7ff;
+      --green: #2fe4b4;
+      --purple: #9a7cff;
+      --amber: #ffbd66;
+      --rose: #ff6f91;
+      --blue-soft: rgba(48, 112, 255, 0.14);
+      --green-soft: rgba(47, 228, 180, 0.12);
+      --purple-soft: rgba(154, 124, 255, 0.16);
+      --amber-soft: rgba(255, 189, 102, 0.14);
+      --rose-soft: rgba(255, 111, 145, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background-image:
+        radial-gradient(circle at 18% 10%, rgba(85, 167, 255, 0.22), transparent 28%),
+        radial-gradient(circle at 82% 16%, rgba(154, 124, 255, 0.2), transparent 30%),
+        linear-gradient(180deg, #03050d, #070b18 48%, #02040a);
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      margin: 32px auto;
+      padding: 52px 64px;
+      background: var(--paper);
+      border: 1px solid rgba(122, 151, 255, 0.22);
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255,255,255,0.06);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(122,151,255,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(122,151,255,0.055) 1px, transparent 1px),
+        radial-gradient(circle at 82% 8%, rgba(154,124,255,0.18), transparent 24%),
+        radial-gradient(circle at 8% 92%, rgba(85,167,255,0.14), transparent 30%);
+      background-size: 28px 28px, 28px 28px, auto, auto;
+      pointer-events: none;
+    }
+
+    .slide > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .slide::after {
+      content: attr(data-page);
+      position: absolute;
+      right: 30px;
+      bottom: 22px;
+      color: rgba(183, 194, 216, 0.52);
+      font-size: 13px;
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: 58px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--navy);
+    }
+
+    h2 {
+      font-size: 34px;
+      line-height: 1.18;
+      margin-bottom: 26px;
+      color: var(--navy);
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-size: 19px;
+      margin-bottom: 12px;
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+
+    p, li {
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li { margin: 7px 0; }
+
+    .kicker {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: 23px;
+      color: var(--muted);
+      margin-top: 22px;
+      max-width: 880px;
+      line-height: 1.45;
+    }
+
+    .topline {
+      position: absolute;
+      left: 64px;
+      top: 28px;
+      right: 64px;
+      height: 1px;
+      background: #e6eaf1;
+    }
+
+    .footer {
+      position: absolute;
+      left: 64px;
+      bottom: 28px;
+      color: #8b95a5;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 22px;
+      background: #fff;
+    }
+
+    .card.blue { background: var(--blue-soft); border-color: #c9dbff; }
+    .card.green { background: var(--green-soft); border-color: #bdebd8; }
+    .card.purple { background: var(--purple-soft); border-color: #ddd4ff; }
+    .card.amber { background: var(--amber-soft); border-color: #ffd8ad; }
+    .card.rose { background: var(--rose-soft); border-color: #ffd0d0; }
+
+    .pill {
+      display: inline-flex;
+      height: 30px;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: #eef2f7;
+      color: #344054;
+      font-size: 13px;
+      font-weight: 800;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .pill.blue { background: var(--blue-soft); color: var(--blue); }
+    .pill.green { background: var(--green-soft); color: #08785a; }
+    .pill.purple { background: var(--purple-soft); color: var(--purple); }
+    .pill.amber { background: var(--amber-soft); color: var(--amber); }
+
+    .toc {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 12px;
+    }
+
+    .toc-item {
+      display: grid;
+      grid-template-columns: 72px 1fr 46px;
+      gap: 16px;
+      align-items: center;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .toc-no {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--blue);
+    }
+
+    .toc-title {
+      font-size: 20px;
+      font-weight: 850;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    .toc-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .toc-page {
+      color: var(--subtle);
+      font-size: 13px;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .project-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      margin-top: 6px;
+    }
+
+    .project-table th,
+    .project-table td {
+      border-bottom: 1px solid #e8ecf3;
+      padding: 15px 12px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .project-table th {
+      font-size: 14px;
+      color: #344054;
+    }
+
+    .project-table td {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .flow {
+      display: flex;
+      gap: 12px;
+      align-items: stretch;
+      margin-top: 18px;
+    }
+
+    .step {
+      flex: 1;
+      min-height: 112px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      padding: 15px;
+      position: relative;
+    }
+
+    .step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -17px;
+      top: 41px;
+      color: #98a2b3;
+      font-weight: 900;
+      font-size: 19px;
+      z-index: 2;
+    }
+
+    .step strong {
+      display: block;
+      color: var(--ink);
+      font-size: 15px;
+      margin-bottom: 7px;
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .chat-mock {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f8fafc;
+      padding: 18px;
+      min-height: 430px;
+    }
+
+    .chat-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #e6eaf1;
+      color: #344054;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .bubble {
+      max-width: 82%;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: #344054;
+      border: 1px solid #e5eaf2;
+      background: #fff;
+    }
+
+    .bubble.user {
+      margin-left: auto;
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
+
+    .bubble.kp {
+      border-left: 4px solid var(--purple);
+    }
+
+    .command-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .command-chip {
+      min-height: 36px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #e5eaf2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #344054;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .lane {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px;
+      background: #fbfcff;
+      margin-top: 14px;
+    }
+
+    .lane-title {
+      font-size: 15px;
+      color: #344054;
+      font-weight: 850;
+      margin-bottom: 12px;
+    }
+
+    .nodes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .node {
+      min-height: 72px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .node.blue { background: var(--blue-soft); border-color: #c9dbff; color: var(--blue); }
+    .node.green { background: var(--green-soft); border-color: #bdebd8; color: #08785a; }
+    .node.purple { background: var(--purple-soft); border-color: #ddd4ff; color: var(--purple); }
+    .node.amber { background: var(--amber-soft); border-color: #ffd8ad; color: var(--amber); }
+
+    .phone-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .phone-mock {
+      width: 236px;
+      height: 470px;
+      border-radius: 32px;
+      border: 8px solid #1f2937;
+      background: #f8fafc;
+      overflow: hidden;
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.18);
+      margin: 0 auto;
+    }
+
+    .phone-screen {
+      height: 100%;
+      background: #f8fafc;
+      padding: 18px 16px;
+      position: relative;
+    }
+
+    .phone-status {
+      font-size: 11px;
+      font-weight: 800;
+      color: #344054;
+      margin-bottom: 18px;
+    }
+
+    .mini-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .mini-tab {
+      flex: 1;
+      height: 28px;
+      border-radius: 14px;
+      background: #e8edf5;
+      color: #667085;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .mini-tab.active {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .mini-card {
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #eef1f6;
+      padding: 12px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+    }
+
+    .mini-line {
+      height: 9px;
+      border-radius: 8px;
+      background: #dbe3ef;
+      margin-bottom: 8px;
+    }
+
+    .mini-line.short { width: 54%; }
+    .mini-line.mid { width: 76%; }
+    .mini-line.green { background: #bdebd8; }
+    .mini-button {
+      height: 36px;
+      border-radius: 10px;
+      background: var(--green);
+      color: white;
+      font-size: 12px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      margin-top: 12px;
+    }
+
+    .day {
+      height: 30px;
+      border-radius: 7px;
+      background: #eef2f7;
+      font-size: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #667085;
+      font-weight: 800;
+    }
+
+    .day.active { background: var(--green-soft); color: #08785a; border: 1px solid #bdebd8; }
+
+    .screen-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .role-card {
+      height: 72px;
+      border-radius: 10px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1.3;
+    }
+
+    .role-card.red { background: #ef4444; }
+    .role-card.blue { background: #2f6fed; }
+    .role-card.green { background: #10a876; }
+    .role-card.purple { background: #7c5ce4; }
+
+    .player-chip {
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #edf0f6;
+      padding: 9px 10px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .badge {
+      height: 22px;
+      border-radius: 999px;
+      padding: 0 9px;
+      display: inline-flex;
+      align-items: center;
+      font-size: 10px;
+      font-weight: 900;
+      background: #eef2f7;
+      color: #344054;
+    }
+
+    .badge.red { background: var(--rose-soft); color: var(--rose); }
+    .badge.green { background: var(--green-soft); color: var(--green); }
+    .badge.purple { background: var(--purple-soft); color: var(--purple); }
+
+    .quiz-option {
+      min-height: 48px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #edf0f6;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      color: #344054;
+      font-weight: 800;
+    }
+
+    .bar {
+      height: 8px;
+      border-radius: 999px;
+      background: #e5eaf2;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: var(--amber);
+      border-radius: inherit;
+    }
+
+    .result-hero {
+      height: 118px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff3e6, #edf4ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      border: 1px solid #f1dfcf;
+    }
+
+    .result-emoji {
+      font-size: 42px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .dimension {
+      margin-bottom: 10px;
+    }
+
+    .dimension p {
+      font-size: 10px;
+      font-weight: 850;
+      color: #667085;
+      margin-bottom: 4px;
+    }
+
+    .caption {
+      text-align: center;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .quote {
+      font-size: 26px;
+      line-height: 1.5;
+      color: var(--navy);
+      font-weight: 850;
+    }
+
+    .github {
+      position: absolute;
+      left: 64px;
+      bottom: 54px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .github span {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .cover-mark {
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #edf4ff, #eaf8f2);
+      border: 1px solid #dfe7f3;
+    }
+
+    h1 { text-shadow: 0 0 28px rgba(85, 167, 255, 0.2); }
+    .kicker { text-shadow: 0 0 18px rgba(85, 167, 255, 0.55); }
+    .topline { background: linear-gradient(90deg, transparent, rgba(85,167,255,0.65), rgba(154,124,255,0.65), transparent); }
+    .footer { color: rgba(183, 194, 216, 0.66); }
+
+    .card,
+    .toc-item,
+    .step,
+    .lane,
+    .node,
+    .chat-mock {
+      border-radius: 8px;
+      border-color: var(--line);
+      background: rgba(13, 19, 40, 0.78);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 18px 34px rgba(0,0,0,0.18);
+      backdrop-filter: blur(16px);
+    }
+
+    .card.blue,
+    .node.blue { background: linear-gradient(135deg, rgba(48,112,255,0.2), rgba(13,19,40,0.76)); border-color: rgba(85,167,255,0.42); color: #9ed0ff; }
+    .card.green,
+    .node.green { background: linear-gradient(135deg, rgba(47,228,180,0.16), rgba(13,19,40,0.76)); border-color: rgba(47,228,180,0.38); color: #72f3d3; }
+    .card.purple,
+    .node.purple { background: linear-gradient(135deg, rgba(154,124,255,0.22), rgba(13,19,40,0.76)); border-color: rgba(154,124,255,0.44); color: #beadff; }
+    .card.amber,
+    .node.amber { background: linear-gradient(135deg, rgba(255,189,102,0.16), rgba(13,19,40,0.76)); border-color: rgba(255,189,102,0.38); color: #ffd08f; }
+    .card.rose { background: linear-gradient(135deg, rgba(255,111,145,0.16), rgba(13,19,40,0.76)); border-color: rgba(255,111,145,0.38); }
+
+    .pill,
+    .badge {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+    }
+    .pill.blue { background: rgba(85,167,255,0.14); color: #8cc5ff; border-color: rgba(85,167,255,0.28); }
+    .pill.green { background: rgba(47,228,180,0.12); color: #66f0cf; border-color: rgba(47,228,180,0.26); }
+    .pill.purple { background: rgba(154,124,255,0.16); color: #b8a6ff; border-color: rgba(154,124,255,0.3); }
+    .pill.amber { background: rgba(255,189,102,0.14); color: #ffd08f; border-color: rgba(255,189,102,0.28); }
+
+    .toc-no {
+      color: var(--blue);
+      text-shadow: 0 0 18px rgba(85,167,255,0.42);
+    }
+
+    .project-table th,
+    .project-table td { border-bottom-color: rgba(122,151,255,0.18); }
+    .project-table th { color: #d9e2ff; }
+
+    .step:not(:last-child)::after {
+      color: rgba(85,167,255,0.9);
+      text-shadow: 0 0 16px rgba(85,167,255,0.75);
+    }
+
+    .lane-title,
+    .chat-head { color: #d9e2ff; }
+
+    .chat-head { border-bottom-color: rgba(122,151,255,0.22); }
+    .bubble {
+      color: #d9e2ff;
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(122,151,255,0.2);
+    }
+    .bubble.user {
+      background: linear-gradient(135deg, rgba(85,167,255,0.96), rgba(154,124,255,0.92));
+      border-color: rgba(154,124,255,0.8);
+    }
+    .command-chip {
+      color: #d9e2ff;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(122,151,255,0.2);
+    }
+
+    .phone-mock {
+      border-color: #11182b;
+      background: #081021;
+      box-shadow: 0 24px 58px rgba(0,0,0,0.42), 0 0 0 1px rgba(85,167,255,0.18);
+    }
+    .phone-screen { background: linear-gradient(180deg, #0b1226, #111a31); }
+    .phone-status { color: #d9e2ff; }
+    .mini-tab {
+      background: rgba(255,255,255,0.07);
+      color: #aebbd5;
+    }
+    .mini-tab.active,
+    .mini-button { background: linear-gradient(135deg, var(--blue), var(--purple)); }
+    .mini-card,
+    .player-chip,
+    .quiz-option {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.1);
+      color: #d9e2ff;
+      box-shadow: none;
+    }
+    .mini-line { background: rgba(183,194,216,0.28); }
+    .mini-line.green { background: rgba(47,228,180,0.64); }
+    .day {
+      background: rgba(255,255,255,0.07);
+      color: #aebbd5;
+    }
+    .day.active {
+      background: rgba(47,228,180,0.16);
+      color: #72f3d3;
+      border-color: rgba(47,228,180,0.34);
+    }
+    .bar { background: rgba(183,194,216,0.18); }
+    .result-hero {
+      background: linear-gradient(135deg, rgba(255,189,102,0.16), rgba(85,167,255,0.16));
+      border-color: rgba(255,255,255,0.12);
+    }
+    .dimension p { color: #aebbd5; }
+    .cover-mark {
+      background: radial-gradient(circle, rgba(85,167,255,0.26), rgba(154,124,255,0.09) 58%, transparent 70%);
+      border-color: rgba(122,151,255,0.24);
+    }
+
+    .cover-projects {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+      max-width: 1080px;
+    }
+
+    .cover-project {
+      min-height: 86px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(13, 19, 40, 0.78);
+    }
+
+    .cover-project strong {
+      display: block;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.3;
+      margin-bottom: 9px;
+    }
+
+    .cover-cloud {
+      position: relative;
+      height: 510px;
+      margin-top: 8px;
+    }
+
+    .cover-title-node {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -50%);
+      width: 430px;
+      height: 210px;
+      border-radius: 999px;
+      border: 1px solid rgba(85,167,255,0.42);
+      background:
+        radial-gradient(circle at 35% 35%, rgba(85,167,255,0.26), transparent 46%),
+        radial-gradient(circle at 70% 68%, rgba(154,124,255,0.22), transparent 50%),
+        rgba(13,19,40,0.84);
+      box-shadow: 0 0 56px rgba(85,167,255,0.2), inset 0 1px 0 rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 26px;
+      z-index: 3;
+    }
+
+    .cover-title-node h1 {
+      font-size: 48px;
+      line-height: 1.16;
+    }
+
+    .cloud-node {
+      position: absolute;
+      border-radius: 999px;
+      border: 1px solid rgba(122,151,255,0.3);
+      background: rgba(13,19,40,0.82);
+      box-shadow: 0 0 34px rgba(85,167,255,0.13), inset 0 1px 0 rgba(255,255,255,0.07);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px;
+      z-index: 2;
+    }
+
+    .cloud-node.project {
+      width: 220px;
+      height: 112px;
+    }
+
+    .cloud-node.skill {
+      width: 142px;
+      height: 70px;
+      border-style: dashed;
+      background: rgba(13,19,40,0.7);
+    }
+
+    .cloud-node strong {
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.25;
+      margin-bottom: 7px;
+    }
+
+    .cloud-node.skill strong {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+
+    .cloud-line {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(85,167,255,0.48), transparent);
+      transform-origin: center;
+      z-index: 1;
+    }
+
+    .ability {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .ability.blue { color: #8cc5ff; }
+    .ability.green { color: #66f0cf; }
+    .ability.purple { color: #b8a6ff; }
+    .ability.amber { color: #ffd08f; }
+    .ability.rose { color: #ff9bb2; }
+
+    .project-title {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+    }
+
+    .project-title .title-no {
+      color: var(--blue);
+      font-size: 26px;
+      font-weight: 950;
+      text-shadow: 0 0 18px rgba(85,167,255,0.48);
+    }
+
+    .intro-stack {
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 22px;
+    }
+
+    .what-card {
+      border: 1px solid rgba(85,167,255,0.36);
+      border-radius: 8px;
+      padding: 20px 22px;
+      background: linear-gradient(135deg, rgba(85,167,255,0.16), rgba(154,124,255,0.12));
+    }
+
+    .what-card h3 { margin-bottom: 8px; }
+
+    .problem-flow {
+      display: grid;
+      grid-template-columns: 1fr 56px 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .arrow-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      font-size: 30px;
+      font-weight: 950;
+      text-shadow: 0 0 16px rgba(85,167,255,0.75);
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .fit-grid .phone-mock {
+      width: 200px;
+      height: 414px;
+      border-width: 7px;
+    }
+
+    .fit-grid .phone-screen { padding: 16px 13px; }
+
+    .mini-tabs.four .mini-tab {
+      font-size: 9px;
+      height: 25px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .metric-tile {
+      min-height: 58px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.07);
+      padding: 8px;
+      font-size: 10px;
+      color: #d9e2ff;
+      font-weight: 850;
+    }
+
+    .knowledge-item {
+      min-height: 46px;
+      border-radius: 8px;
+      border: 1px solid rgba(154,124,255,0.22);
+      background: rgba(154,124,255,0.09);
+      padding: 9px;
+      margin-bottom: 8px;
+      font-size: 10px;
+      color: #d9e2ff;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .process-map {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .process-card {
+      min-height: 190px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(13,19,40,0.78);
+      padding: 18px;
+      position: relative;
+    }
+
+    .process-card:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -17px;
+      top: 76px;
+      color: var(--blue);
+      font-size: 24px;
+      font-weight: 950;
+    }
+
+    .process-card .tag {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .wolf-board {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .control-panel,
+    .deal-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(13,19,40,0.82);
+      padding: 15px;
+      min-height: 316px;
+    }
+
+    .segmented {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .segmented span {
+      height: 34px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.07);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .segmented .active {
+      background: linear-gradient(135deg, rgba(85,167,255,0.32), rgba(154,124,255,0.28));
+      color: #fff;
+      border: 1px solid rgba(85,167,255,0.38);
+    }
+
+    .role-token {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 34px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0 12px;
+      margin-bottom: 7px;
+      color: #d9e2ff;
+      font-size: 13px;
+      font-weight: 850;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .deal-list {
+      display: grid;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .deal-row {
+      display: grid;
+      grid-template-columns: 62px 1fr 1fr 86px;
+      gap: 8px;
+      align-items: center;
+      min-height: 35px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 0 10px;
+      background: rgba(255,255,255,0.06);
+      font-size: 12px;
+      color: #d9e2ff;
+      font-weight: 850;
+    }
+
+    .deal-row .camp { color: #ff9bb2; }
+    .deal-row .good { color: #72f3d3; }
+
+    .constraint-map {
+      display: grid;
+      grid-template-columns: 1fr 72px 1.35fr;
+      grid-template-rows: repeat(2, 1fr);
+      gap: 16px;
+      align-items: stretch;
+      margin-top: 26px;
+    }
+
+    .constraint-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      font-size: 30px;
+      font-weight: 950;
+      text-shadow: 0 0 16px rgba(85,167,255,0.75);
+    }
+
+    .constraint-tech {
+      grid-column: 3;
+      grid-row: 1 / 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .summary-layout {
+      display: grid;
+      grid-template-columns: 430px 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .radar-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(13,19,40,0.78);
+      padding: 18px;
+      min-height: 470px;
+    }
+
+    .radar-svg text {
+      fill: #d9e2ff;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .summary-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .summary-item {
+      display: grid;
+      grid-template-columns: 160px 170px 1fr;
+      gap: 12px;
+      align-items: start;
+      border: 1px solid rgba(122,151,255,0.22);
+      border-radius: 8px;
+      background: rgba(13,19,40,0.78);
+      padding: 12px 14px;
+    }
+
+    .summary-item strong {
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .summary-item span,
+    .summary-item p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .run-slide h2 {
+      margin-bottom: 20px;
+    }
+
+    .run-slide .card {
+      padding: 18px;
+    }
+
+    .run-slide .grid-2 {
+      margin-top: 20px !important;
+    }
+
+    .run-slide .quote {
+      margin-top: 20px !important;
+      font-size: 23px;
+      line-height: 1.38;
+    }
+
+    @page {
+      size: 1280px 720px;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 1280px;
+        margin: 0;
+        background: #03050d;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .slide {
+        width: 1280px;
+        height: 720px;
+        margin: 0;
+        box-shadow: none;
+        border: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="slide" data-page="01">
+      <div class="cover-mark"></div>
+      <div class="kicker">Product Portfolio</div>
+      <div class="cover-cloud">
+        <div class="cover-title-node">
+          <h1>韩菁芸<br />AI 产品作品集</h1>
+        </div>
+
+        <div class="cloud-line" style="left:260px; top:190px; width:255px; transform:rotate(24deg);"></div>
+        <div class="cloud-line" style="left:520px; top:126px; width:250px; transform:rotate(-10deg);"></div>
+        <div class="cloud-line" style="left:720px; top:210px; width:250px; transform:rotate(-28deg);"></div>
+        <div class="cloud-line" style="left:278px; top:374px; width:260px; transform:rotate(-24deg);"></div>
+        <div class="cloud-line" style="left:720px; top:374px; width:250px; transform:rotate(23deg);"></div>
+
+        <div class="cloud-node project" style="left:42px; top:92px;"><strong>Campus Apply Skill</strong><span class="ability blue">Automation Boundary</span></div>
+        <div class="cloud-node project" style="left:452px; top:28px;"><strong>AI-KP 飞书群跑团主持机器人</strong><span class="ability purple">Agent / RAG</span></div>
+        <div class="cloud-node project" style="right:48px; top:96px;"><strong>My Keep</strong><span class="ability green">Data Product</span></div>
+        <div class="cloud-node project" style="left:120px; bottom:58px;"><strong>双身份狼人杀发牌工具</strong><span class="ability amber">Rule Engine</span></div>
+        <div class="cloud-node project" style="right:144px; bottom:58px;"><strong>酒瘾人格测试</strong><span class="ability rose">Growth Loop</span></div>
+
+        <div class="cloud-node skill" style="left:322px; top:56px;"><strong class="ability blue">Codex Skill</strong></div>
+        <div class="cloud-node skill" style="right:318px; top:52px;"><strong class="ability purple">LLM / RAG</strong></div>
+        <div class="cloud-node skill" style="left:338px; bottom:20px;"><strong class="ability green">Data Loop</strong></div>
+        <div class="cloud-node skill" style="right:270px; bottom:28px;"><strong class="ability amber">Constraint</strong></div>
+        <div class="cloud-node skill" style="left:500px; bottom:-14px;"><strong class="ability rose">Growth</strong></div>
+        <div class="cloud-node skill" style="left:18px; top:264px;"><strong class="ability blue">AI / Codex Skill</strong></div>
+        <div class="cloud-node skill" style="right:14px; top:268px;"><strong class="ability green">Agent Design</strong></div>
+        <div class="cloud-node skill" style="left:260px; top:436px;"><strong class="ability purple">Rule Modeling</strong></div>
+        <div class="cloud-node skill" style="right:168px; top:438px;"><strong class="ability amber">Social Experience</strong></div>
+      </div>
+      <div class="github">GitHub <span>https://github.com/zydwz2001</span></div>
+      <div class="footer">韩菁芸｜2027 届｜AI 产品经理</div>
+    </section>
+
+    <section class="slide" data-page="02">
+      <div class="kicker">Contents</div>
+      <h2>目录</h2>
+      <div class="toc">
+        <div class="toc-item">
+          <div class="toc-no">01</div>
+          <div><div class="toc-title">Campus Apply Skill</div><div class="toc-desc">校园招聘投递辅助 Codex Skill</div></div>
+          <div class="toc-page">04-07</div>
+        </div>
+        <div class="toc-item">
+          <div class="toc-no">02</div>
+          <div><div class="toc-title">AI-KP 飞书群跑团主持机器人</div><div class="toc-desc">群聊场景下的垂直 AI Agent</div></div>
+          <div class="toc-page">08-10</div>
+        </div>
+        <div class="toc-item">
+          <div class="toc-no">03</div>
+          <div><div class="toc-title">My Keep</div><div class="toc-desc">个人健身记录与复盘工具</div></div>
+          <div class="toc-page">11-13</div>
+        </div>
+        <div class="toc-item">
+          <div class="toc-no">04</div>
+          <div><div class="toc-title">双身份狼人杀发牌工具</div><div class="toc-desc">线下聚会玩法的规则辅助工具</div></div>
+          <div class="toc-page">14-15</div>
+        </div>
+        <div class="toc-item">
+          <div class="toc-no">05</div>
+          <div><div class="toc-title">酒瘾人格测试</div><div class="toc-desc">小范围朋友传播的轻娱乐测试网站</div></div>
+          <div class="toc-page">16-17</div>
+        </div>
+        <div class="toc-item">
+          <div class="toc-no">06</div>
+          <div><div class="toc-title">能力总结</div><div class="toc-desc">五个项目沉淀出的产品能力</div></div>
+          <div class="toc-page">18</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-page="03">
+      <div class="kicker">Overview</div>
+      <h2>项目概览：五个从真实场景出发的产品原型</h2>
+      <table class="project-table">
+        <tr>
+          <th style="width: 20%;">项目</th>
+          <th style="width: 24%;">场景</th>
+          <th style="width: 28%;">产品问题</th>
+          <th style="width: 28%;">核心方案</th>
+        </tr>
+        <tr>
+          <td><strong>Campus Apply Skill</strong></td>
+          <td>校园招聘投递</td>
+          <td>表单重复、PDF 解析不可靠、提交动作不可逆。</td>
+          <td>把投递流程固化为 Codex Skill，明确安全断点和复盘机制。</td>
+        </tr>
+        <tr>
+          <td><strong>AI-KP 飞书群跑团主持机器人</strong></td>
+          <td>飞书群在线跑团</td>
+          <td>真人 KP 准备成本高，群聊线索、骰点和剧情状态容易分散。</td>
+          <td>用飞书 Bot + RAG 检索 + 大模型生成 + 场景状态 + 权限分层，构建半自动 KP。</td>
+        </tr>
+        <tr>
+          <td><strong>My Keep</strong></td>
+          <td>个人健身记录</td>
+          <td>训练、身体数据、照片和知识分散在多个工具。</td>
+          <td>整合训练录入、身体追踪、照片对比和知识沉淀。</td>
+        </tr>
+        <tr>
+          <td><strong>双身份狼人杀</strong></td>
+          <td>朋友聚会游戏</td>
+          <td>非主流玩法缺少工具支持，手工发牌反复出错。</td>
+          <td>把线下规则建模为可校验的发牌约束。</td>
+        </tr>
+        <tr>
+          <td><strong>酒瘾人格测试</strong></td>
+          <td>朋友小圈层娱乐</td>
+          <td>一次性娱乐测试需要短链路、有梗、能传播。</td>
+          <td>参考 SBTI 机制，用酒类人格和轻量评分模型生成结果。</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="slide" data-page="04">
+      <div class="kicker">01 Campus Apply Skill</div>
+      <h2 class="project-title"><span class="title-no">01</span>校园招聘投递辅助 Codex Skill</h2>
+      <div class="intro-stack">
+        <div class="what-card">
+          <h3>这个项目做什么</h3>
+          <p>把校园招聘投递流程封装成一个 Codex Skill：读取结构化简历库、扫描表单字段、自动填写确定性事实，并停在登录、附件上传和最终提交等安全断点前。</p>
+          <div style="margin-top: 14px;"><span class="pill blue">Codex Skill</span><span class="pill green">Human-in-the-loop</span><span class="pill purple">Resume YAML</span></div>
+        </div>
+        <div class="problem-flow">
+          <div class="card amber"><h3>用户痛点</h3><ul><li>表单字段重复填写，系统差异大。</li><li>PDF 简历解析经常错位或缺失。</li><li>提交动作不可逆，不能盲目自动化。</li></ul></div>
+          <div class="arrow-block">→</div>
+          <div class="card blue"><h3>产品方案</h3><ul><li>确定性事实自动填充。</li><li>主观选择和高风险动作交给用户。</li><li>每次投递后沉淀站点规则和缺失信息。</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-page="05">
+      <div class="kicker">01 Campus Apply Skill</div>
+      <h2 class="project-title"><span class="title-no">01</span>流程设计：把投递过程拆成 Skill 执行与人工确认</h2>
+      <div class="lane">
+        <div class="lane-title">Skill 执行</div>
+        <div class="nodes">
+          <div class="node blue">原始简历<br />结构化为 YAML</div>
+          <div class="node blue">打开投递链接<br />推进到安全断点</div>
+          <div class="node green">清空不可信<br />解析字段</div>
+          <div class="node green">扫描字段并填充<br />确定性事实</div>
+        </div>
+      </div>
+      <div class="lane">
+        <div class="lane-title">用户确认</div>
+        <div class="nodes">
+          <div class="node amber">登录 / 验证码</div>
+          <div class="node amber">附件简历上传</div>
+          <div class="node amber">意向岗位 / 城市</div>
+          <div class="node amber">最终提交</div>
+        </div>
+      </div>
+      <div class="lane">
+        <div class="lane-title">复盘沉淀</div>
+        <div class="nodes">
+          <div class="node purple">缺失信息<br />询问补充</div>
+          <div class="node purple">稳定事实<br />写回简历库</div>
+          <div class="node purple">站点规则<br />写入 rules</div>
+          <div class="node purple">形成 handoff<br />避免重复解释</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-page="06">
+      <div class="kicker">01 Campus Apply Skill</div>
+      <h2 class="project-title"><span class="title-no">01</span>原型：投递计划、缺失信息和收尾报告</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>字段扫描计划</h3>
+          <table class="project-table">
+            <tr><th>字段</th><th>动作</th><th>数据来源</th></tr>
+            <tr><td>姓名</td><td>fill</td><td>basic.name</td></tr>
+            <tr><td>教育经历</td><td>fill</td><td>education.N</td></tr>
+            <tr><td>意向城市</td><td>review</td><td>用户确认</td></tr>
+            <tr><td>实习经历</td><td>auto</td><td>按简历库 internships 数量自动添加段数</td></tr>
+          </table>
+        </div>
+        <div class="card green">
+          <h3>投递后报告</h3>
+          <ul>
+            <li>已填写：安全字段及来源路径。</li>
+            <li>需确认：主观意愿、复杂控件、页面显示异常。</li>
+            <li>缺失信息：询问补充到简历库或本次留空。</li>
+            <li>本次沉淀：站点规则、简历库新增事实、下次注意事项。</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top: 28px;">关键设计：附件上传和字段解析解耦。附件可以保留，但解析出的字段默认不可信，必须以结构化简历库重填。</p>
+    </section>
+
+    <section class="slide" data-page="07">
+      <div class="kicker">01 Campus Apply Skill</div>
+      <h2 class="project-title"><span class="title-no">01</span>产品判断与技术问题：效率提升不能牺牲用户控制权</h2>
+      <div class="grid-4">
+        <div class="card blue"><h3>Skill 负责</h3><ul><li>读取简历库</li><li>扫描表单字段</li><li>填充确定性事实</li><li>生成报告</li></ul></div>
+        <div class="card amber"><h3>用户负责</h3><ul><li>登录与验证码</li><li>附件上传</li><li>主观意愿选择</li><li>最终提交</li></ul></div>
+        <div class="card green"><h3>技术问题</h3><ul><li>不同 ATS 表单 DOM 差异大</li><li>PDF 解析字段不可信</li><li>动态新增经历段落</li><li>文件上传不能误提交</li></ul></div>
+        <div class="card purple"><h3>系统沉淀</h3><ul><li>站点字段规则</li><li>稳定个人事实</li><li>操作经验</li><li>下次交接文档</li></ul></div>
+      </div>
+      <p class="quote" style="margin-top: 36px;">这个项目的核心不是“自动化到最后一步”，而是把高重复、低判断的动作交给 Skill，把高风险、强主观的动作留给人。</p>
+    </section>
+
+    <section class="slide" data-page="08">
+      <div class="kicker">02 AI-KP Feishu TRPG Bot</div>
+      <h2 class="project-title"><span class="title-no">02</span>AI-KP 飞书群跑团主持机器人</h2>
+      <div class="intro-stack">
+        <div class="what-card">
+          <h3>这个项目做什么</h3>
+          <p>把 AI 放进飞书群跑团场景：通过飞书机器人接收玩家行动，结合团本 RAG、骰点工具、场景状态和大模型生成，以 KP 口吻推进剧情。</p>
+          <div style="margin-top: 14px;"><span class="pill purple">Vertical Agent</span><span class="pill blue">Feishu Bot</span><span class="pill green">RAG / State</span><span class="pill amber">LLM Orchestration</span></div>
+        </div>
+        <div class="problem-flow">
+          <div class="card amber"><h3>用户痛点</h3><ul><li>真人 KP 准备成本高，主持压力大。</li><li>群聊线索、角色卡、骰点和剧情状态分散。</li><li>AI 直接读团本容易剧透和前后矛盾。</li></ul></div>
+          <div class="arrow-block">→</div>
+          <div class="card purple"><h3>产品方案</h3><ul><li>玩家只需在群里 @AI-KP 描述行动。</li><li>系统按 public / revealed / private 分层检索。</li><li>场景状态和骰点结果进入大模型上下文。</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-page="09">
+      <div class="kicker">02 AI-KP Feishu TRPG Bot</div>
+      <h2 class="project-title"><span class="title-no">02</span>RAG 与大模型链路：让 AI 只讲玩家此刻该知道的事</h2>
+      <div class="grid-2">
+        <div class="chat-mock">
+          <div class="chat-head"><span>飞书群｜北风之馆</span><span class="badge purple">AI-KP</span></div>
+          <div class="bubble user">@AI-KP 我检查书桌上的抽屉</div>
+          <div class="bubble kp">抽屉被潮气泡得有些发胀。你可以尝试打开它，可能需要一次侦查或力量相关检定。</div>
+          <div class="bubble user">@AI-KP /r 1d100 侦查 60</div>
+          <div class="bubble kp">侦查 43 / 60，成功。你在抽屉夹层里找到一张潮湿的旧收据，这条线索已加入公开记录。</div>
+          <div class="command-row">
+            <div class="command-chip">/scene</div>
+            <div class="command-chip">/investigate</div>
+            <div class="command-chip">/go</div>
+            <div class="command-chip">/r 1d100</div>
+            <div class="command-chip">/kp</div>
+            <div class="command-chip">/reload</div>
+          </div>
+        </div>
+        <div>
+          <div class="lane" style="margin-top:0;">
+            <div class="lane-title">RAG 功能拆解</div>
+            <div class="nodes" style="grid-template-columns: repeat(2, 1fr);">
+              <div class="node blue">读取团本<br />PDF / MD / JSON</div>
+              <div class="node green">切分文本块<br />建立关键词索引</div>
+              <div class="node purple">按 visibility<br />过滤可见信息</div>
+              <div class="node amber">命中隐藏资料<br />触发防剧透回复</div>
+            </div>
+          </div>
+          <div class="lane">
+            <div class="lane-title">大模型接入方式</div>
+            <div class="nodes" style="grid-template-columns: repeat(2, 1fr);">
+              <div class="node purple">System Prompt<br />定义 KP 行为</div>
+              <div class="node green">Context Pack<br />注入检索片段</div>
+              <div class="node blue">Tool Result<br />骰点/场景状态</div>
+              <div class="node amber">Guardrail<br />禁止剧透和代行动</div>
+            </div>
+          </div>
+          <p style="margin-top: 22px;">当前代码已跑通本地检索版链路；大模型层作为生成器接在 KpBrain 之后，用检索结果和场景状态生成更自然的 KP 叙事，而不是把整本团本直接塞进上下文。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide run-slide" data-page="10">
+      <div class="kicker">02 AI-KP Feishu TRPG Bot</div>
+      <h2 class="project-title"><span class="title-no">02</span>当前如何跑通：飞书入口、规则工具与状态持久化</h2>
+      <div class="grid-3">
+        <div class="card purple">
+          <h3>飞书接入</h3>
+          <ul>
+            <li>自建应用开启机器人能力。</li>
+            <li>长连接接收 im.message.receive_v1。</li>
+            <li>解析 @ 消息后调用 reply 接口回群。</li>
+          </ul>
+        </div>
+        <div class="card blue">
+          <h3>规则与状态</h3>
+          <ul>
+            <li>/r 支持骰点表达式和 COC 判定。</li>
+            <li>scenes.json 管理场景、出口、调查点。</li>
+            <li>session.json 保存当前场景。</li>
+            <li>revealed_notes 写回已公开线索。</li>
+          </ul>
+        </div>
+        <div class="card green">
+          <h3>技术难点</h3>
+          <ul>
+            <li>PDF 团本抽取后需要分块检索。</li>
+            <li>玩家可见与 KP 私密资料必须隔离。</li>
+            <li>自然语言“去二楼/调查壁炉”要映射结构化场景。</li>
+            <li>多人群聊需要避免重复回复和机器人自触发。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top: 28px;">
+        <div class="card amber">
+          <h3>跑通链路</h3>
+          <p>本地启动 Python 服务后，飞书群 @AI-KP 触发消息事件；系统读取 campaign 资料、匹配当前场景、执行骰点或检索，再把回复发回原消息线程。</p>
+        </div>
+        <div class="card">
+          <h3>产品指标</h3>
+          <p>开团准备时间、AI 平均回复延迟、单局人工接管次数、剧情一致性评分、剧透事故次数、玩家满意度与完团率。</p>
+        </div>
+      </div>
+      <p class="quote" style="margin-top: 30px;">这个项目的重点不是“聊天”，而是把 AI 放进一个有专业资料、工具、状态和权限约束的主持系统里。</p>
+    </section>
+
+    <section class="slide" data-page="11">
+      <div class="kicker">03 My Keep</div>
+      <h2 class="project-title"><span class="title-no">03</span>My Keep｜个人健身记录与复盘工具</h2>
+      <div class="intro-stack">
+        <div class="what-card">
+          <h3>这个项目做什么</h3>
+          <p>围绕个人健身复盘，把今日训练、月视图、维度数据和知识库放进同一个工作台，帮助用户从“记录动作”走到“看见变化并调整计划”。</p>
+          <div style="margin-top: 14px;"><span class="pill green">Local Data</span><span class="pill blue">Mobile First</span><span class="pill purple">Analytics</span></div>
+        </div>
+        <div class="problem-flow">
+          <div class="card amber"><h3>用户痛点</h3><ul><li>训练记录、身体数据、照片和知识散在多个工具。</li><li>训练中录入重量、次数、左右侧数据不够顺手。</li><li>记录后缺少可复盘的趋势视图。</li></ul></div>
+          <div class="arrow-block">→</div>
+          <div class="card green"><h3>产品方案</h3><ul><li>今日页负责快速记录。</li><li>月视图聚合训练频率和容量。</li><li>维度数据和知识库帮助调整下一轮训练。</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-page="12">
+      <div class="kicker">03 My Keep</div>
+      <h2 class="project-title"><span class="title-no">03</span>信息架构与核心页面原型</h2>
+      <div class="fit-grid">
+        <div>
+          <div class="phone-mock">
+            <div class="phone-screen">
+              <div class="phone-status">09:41</div>
+              <div class="mini-tabs four"><div class="mini-tab active">今日</div><div class="mini-tab">月视图</div><div class="mini-tab">维度</div><div class="mini-tab">知识库</div></div>
+              <div class="mini-card"><div style="font-size:11px;font-weight:900;color:#d9e2ff;margin-bottom:8px;">背部 + 有氧</div><div class="mini-line mid green"></div><div class="mini-line"></div></div>
+              <div class="mini-card"><div style="font-size:10px;color:#aebbd5;margin-bottom:6px;">高位下拉｜4 组</div><div class="mini-line green"></div></div>
+              <div class="mini-card"><div style="font-size:10px;color:#aebbd5;margin-bottom:6px;">坐姿划船｜3 组</div><div class="mini-line mid"></div></div>
+              <div class="mini-button">添加训练</div>
+            </div>
+          </div>
+          <div class="caption">今日：训练中快速记录</div>
+        </div>
+        <div>
+          <div class="phone-mock">
+            <div class="phone-screen">
+              <div class="phone-status">09:41</div>
+              <div class="mini-tabs four"><div class="mini-tab">今日</div><div class="mini-tab active">月视图</div><div class="mini-tab">维度</div><div class="mini-tab">知识库</div></div>
+              <div class="calendar">
+                <div class="day active">1</div><div class="day">2</div><div class="day active">3</div><div class="day">4</div><div class="day active">5</div><div class="day">6</div><div class="day">7</div>
+                <div class="day">8</div><div class="day active">9</div><div class="day">10</div><div class="day active">11</div><div class="day">12</div><div class="day">13</div><div class="day active">14</div>
+                <div class="day">15</div><div class="day">16</div><div class="day active">17</div><div class="day">18</div><div class="day active">19</div><div class="day">20</div><div class="day">21</div>
+              </div>
+              <div class="mini-card" style="margin-top:14px;"><div style="font-size:10px;color:#aebbd5;">本月训练 9 次｜总容量 18.6t</div><div class="mini-line green" style="margin-top:8px;"></div></div>
+            </div>
+          </div>
+          <div class="caption">月视图：频率与容量复盘</div>
+        </div>
+        <div>
+          <div class="phone-mock">
+            <div class="phone-screen">
+              <div class="phone-status">09:41</div>
+              <div class="mini-tabs four"><div class="mini-tab">今日</div><div class="mini-tab">月视图</div><div class="mini-tab active">维度</div><div class="mini-tab">知识库</div></div>
+              <div class="metric-grid">
+                <div class="metric-tile">体重<br /><span style="color:#72f3d3;">-1.2kg</span></div>
+                <div class="metric-tile">腰围<br /><span style="color:#72f3d3;">-2cm</span></div>
+                <div class="metric-tile">背部容量<br /><span style="color:#8cc5ff;">+18%</span></div>
+                <div class="metric-tile">训练频率<br /><span style="color:#ffd08f;">9/30</span></div>
+              </div>
+              <div class="mini-card" style="height:86px;margin-top:12px;"><div class="mini-line green" style="width:88%;margin-top:28px;"></div><div class="mini-line mid"></div></div>
+            </div>
+          </div>
+          <div class="caption">维度数据：指标拆解</div>
+        </div>
+        <div>
+          <div class="phone-mock">
+            <div class="phone-screen">
+              <div class="phone-status">09:41</div>
+              <div class="mini-tabs four"><div class="mini-tab">今日</div><div class="mini-tab">月视图</div><div class="mini-tab">维度</div><div class="mini-tab active">知识库</div></div>
+              <div class="knowledge-item">背部训练：先垂直拉，再水平拉</div>
+              <div class="knowledge-item">平台期处理：降低动作数量，提升完成质量</div>
+              <div class="knowledge-item">下次训练建议：保留高位下拉，替换坐姿划船</div>
+              <div class="mini-button">写入计划</div>
+            </div>
+          </div>
+          <div class="caption">知识库：复盘后调整</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-page="13">
+      <div class="kicker">03 My Keep</div>
+      <h2 class="project-title"><span class="title-no">03</span>设计结构：今日输入、月视图复盘、维度分析、知识反馈</h2>
+      <div class="process-map">
+        <div class="process-card"><div class="tag">Today</div><h3>今日</h3><p>训练时只保留必要输入：动作、组数、重量、次数和完成状态，减少打断。</p></div>
+        <div class="process-card"><div class="tag">Calendar</div><h3>月视图</h3><p>把每天的训练部位、频率、容量和有氧记录聚合到一个月历里。</p></div>
+        <div class="process-card"><div class="tag">Metrics</div><h3>维度数据</h3><p>从训练容量、围度、体重、照片和频率拆出可观察指标。</p></div>
+        <div class="process-card"><div class="tag">Knowledge</div><h3>知识库</h3><p>把复盘结论沉淀为训练原则和下次计划，形成调整闭环。</p></div>
+      </div>
+      <div class="grid-3" style="margin-top: 24px;">
+        <div class="card"><h3>可验证指标</h3><p>单次训练记录耗时、每次记录点击数、连续记录天数。</p></div>
+        <div class="card"><h3>技术问题</h3><p>动作组需要支持左右侧、重量、次数、完成状态和容量计算，不能因为输入顺序不同导致统计错乱。</p></div>
+        <div class="card"><h3>数据设计</h3><p>训练记录、身体指标、照片和动作库拆成独立数据表，再按日期聚合到月视图复盘。</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-page="14">
+      <div class="kicker">04 双身份狼人杀发牌工具</div>
+      <h2 class="project-title"><span class="title-no">04</span>双身份狼人杀发牌工具</h2>
+      <div class="intro-stack">
+        <div class="what-card">
+          <h3>这个项目做什么</h3>
+          <p>把朋友聚会里的双身份狼人杀规则做成发牌工具：输入人数和牌库后，系统自动生成多套满足约束的候选发牌方案，减少手工重发和规则争议。</p>
+          <div style="margin-top: 14px;"><span class="pill purple">Rule Tool</span><span class="pill green">Party Game</span><span class="pill amber">Constraint Solver</span></div>
+        </div>
+        <div class="wolf-board">
+          <div class="control-panel">
+            <h3>开局配置</h3>
+            <div class="segmented"><span>5人</span><span class="active">6人</span><span>7人</span><span>8人</span></div>
+            <div class="role-token"><span>狼人</span><strong>×3</strong></div>
+            <div class="role-token"><span>预言家</span><strong>×1</strong></div>
+            <div class="role-token"><span>女巫</span><strong>×1</strong></div>
+            <div class="role-token"><span>平民</span><strong>×7</strong></div>
+            <div class="mini-button" style="margin-top: 18px;">生成候选方案</div>
+          </div>
+          <div class="deal-panel">
+            <h3>候选方案 01｜规则校验通过</h3>
+            <div class="deal-list">
+              <div class="deal-row"><span>P01</span><span>狼人</span><span>平民</span><span class="camp">狼人阵营</span></div>
+              <div class="deal-row"><span>P02</span><span>平民</span><span>平民</span><span class="good">金宝宝</span></div>
+              <div class="deal-row"><span>P03</span><span>预言家</span><span>平民</span><span class="good">神职</span></div>
+              <div class="deal-row"><span>P04</span><span>女巫</span><span>平民</span><span class="good">神职</span></div>
+              <div class="deal-row"><span>P05</span><span>狼人</span><span>平民</span><span class="camp">狼人阵营</span></div>
+              <div class="deal-row"><span>P06</span><span>平民</span><span>狼人</span><span class="camp">狼人阵营</span></div>
+            </div>
+            <div style="margin-top: 16px;"><span class="pill green">无狼预冲突</span><span class="pill blue">狼人玩家 3 人</span><span class="pill amber">含金宝宝</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-page="15">
+      <div class="kicker">04 双身份狼人杀发牌工具</div>
+      <h2 class="project-title"><span class="title-no">04</span>把玩法规则转化为可校验的发牌约束</h2>
+      <div class="flow">
+        <div class="step"><strong>选择人数</strong><span>支持 5-8 人局。</span></div>
+        <div class="step"><strong>生成牌库</strong><span>按人数配置狼、神、民。</span></div>
+        <div class="step"><strong>随机分配</strong><span>每位玩家两张身份牌。</span></div>
+        <div class="step"><strong>规则校验</strong><span>冲突、金宝宝、狼人玩家数。</span></div>
+        <div class="step"><strong>输出方案</strong><span>一次生成多套可选发牌结果。</span></div>
+      </div>
+      <div class="constraint-map">
+        <div class="card purple"><h3>约束 1</h3><p>狼人和预言家不能在同一名玩家手里。</p></div>
+        <div class="constraint-arrow">→</div>
+        <div class="card amber constraint-tech"><h3>技术实现</h3><p>用随机生成 + 约束校验循环生成候选方案。每次生成后检查身份冲突、金宝宝和狼人玩家数量，只保留通过校验的方案，并限制候选数量，避免无限重试和重复发牌。</p></div>
+        <div class="card green"><h3>约束 2</h3><p>每局至少有一个双平民“金宝宝”。</p></div>
+        <div class="constraint-arrow">→</div>
+      </div>
+    </section>
+
+    <section class="slide" data-page="16">
+      <div class="kicker">05 酒瘾人格测试</div>
+      <h2 class="project-title"><span class="title-no">05</span>酒瘾人格测试｜朋友小圈层娱乐测试</h2>
+      <div class="grid-2">
+        <div class="intro-stack">
+          <div class="what-card">
+            <h3>这个项目做什么</h3>
+            <p>参考 SBTI 的传播机制，用 10 道轻量题生成酒类人格、维度标签和最佳酒搭子，让朋友之间产生截图分享和讨论。</p>
+          </div>
+          <div class="problem-flow">
+            <div class="card amber"><h3>用户痛点</h3><ul><li>娱乐测试如果太长，完成率低。</li><li>纯随机结果不好聊，也不容易传播。</li><li>朋友之间需要“有梗但不冒犯”的标签。</li></ul></div>
+            <div class="arrow-block">→</div>
+            <div class="card blue"><h3>产品方案</h3><ul><li>10 题短链路完成。</li><li>A/B/C 分值映射到 11 个酒类人格。</li><li>结果页提供维度、酒搭子和截图分享点。</li></ul></div>
+          </div>
+        </div>
+        <div class="phone-row" style="grid-template-columns: 1fr 1fr; gap: 18px;">
+          <div>
+            <div class="phone-mock" style="height: 500px;">
+              <div class="phone-screen" style="background: linear-gradient(135deg, #111a31, #1a1230);">
+                <div class="phone-status">09:41</div>
+                <h3 style="font-size:18px; text-align:center; margin-bottom:8px;">酒瘾人格测试</h3>
+                <p style="font-size:12px; text-align:center; margin-bottom:18px;">10 道题发现你的酒类人格</p>
+                <div class="bar"><span style="width:40%;"></span></div>
+                <div style="font-size:12px; font-weight:900; color:#d9e2ff; margin:14px 0;">朋友约你去陌生人的局，你会？</div>
+                <div class="quiz-option">A. 不去，怕尴尬</div>
+                <div class="quiz-option">B. 去，但先观察一下</div>
+                <div class="quiz-option">C. 去，当场打成一片</div>
+              </div>
+            </div>
+            <div class="caption">答题页：低门槛完成链路</div>
+          </div>
+          <div>
+            <div class="phone-mock" style="height: 500px;">
+              <div class="phone-screen" style="background: #11182b;">
+                <div class="phone-status">09:41</div>
+                <div class="result-hero">
+                  <div class="result-emoji">🥃</div>
+                  <div style="font-size:19px; font-weight:950; color:#f5f7ff;">威士忌人格</div>
+                  <div style="font-size:11px; color:#e58a22; font-weight:850;">浓烈醇厚的力量系</div>
+                </div>
+                <div class="dimension"><p>社交能量 55%</p><div class="bar"><span style="width:55%;"></span></div></div>
+                <div class="dimension"><p>行动力 85%</p><div class="bar"><span style="width:85%;"></span></div></div>
+                <div class="dimension"><p>情绪稳定 70%</p><div class="bar"><span style="width:70%;"></span></div></div>
+                <div class="mini-card"><div class="mini-line mid"></div><div class="mini-line short"></div></div>
+              </div>
+            </div>
+            <div class="caption">结果页：标签、维度与分享点</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-page="17">
+      <div class="kicker">05 酒瘾人格测试</div>
+      <h2 class="project-title"><span class="title-no">05</span>轻量评分模型与传播闭环</h2>
+      <div class="grid-3">
+        <div class="card amber">
+          <h3>评分模型</h3>
+          <ul>
+            <li>10 道题，降低完成门槛。</li>
+            <li>A/B/C 分别映射 0/1/2 分。</li>
+            <li>总分映射到 11 个酒类人格结果。</li>
+            <li>结果页包含六维度、酒局表现和最佳酒搭子。</li>
+          </ul>
+        </div>
+        <div class="card blue">
+          <h3>传播闭环</h3>
+          <ul>
+            <li>朋友群或朋友圈看到链接。</li>
+            <li>短题量快速完成。</li>
+            <li>结果页提供标签、维度和最佳酒搭子。</li>
+            <li>截图后在小圈层二次讨论。</li>
+          </ul>
+        </div>
+        <div class="card purple">
+          <h3>技术问题</h3>
+          <ul>
+            <li>结果不能纯随机，需要稳定可解释的映射。</li>
+            <li>题目权重影响人格分布，要避免结果过度集中。</li>
+            <li>移动端结果页需要适配截图分享。</li>
+            <li>本地静态站点要保证无后端也能完整运行。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-page="18">
+      <div class="kicker">Summary</div>
+      <h2 class="project-title"><span class="title-no">06</span>项目能力总结：AI 产品经理匹配度</h2>
+      <div class="summary-layout">
+        <div class="radar-card">
+          <h3>能力雷达</h3>
+          <svg class="radar-svg" viewBox="0 0 360 360" width="100%" height="360" aria-label="能力雷达图">
+            <g transform="translate(180 178)">
+              <polygon points="0,-132 126,-41 78,107 -78,107 -126,-41" fill="none" stroke="rgba(122,151,255,0.24)" />
+              <polygon points="0,-99 95,-31 59,80 -59,80 -95,-31" fill="none" stroke="rgba(122,151,255,0.22)" />
+              <polygon points="0,-66 63,-20 39,53 -39,53 -63,-20" fill="none" stroke="rgba(122,151,255,0.18)" />
+              <line x1="0" y1="0" x2="0" y2="-132" stroke="rgba(122,151,255,0.18)" />
+              <line x1="0" y1="0" x2="126" y2="-41" stroke="rgba(122,151,255,0.18)" />
+              <line x1="0" y1="0" x2="78" y2="107" stroke="rgba(122,151,255,0.18)" />
+              <line x1="0" y1="0" x2="-78" y2="107" stroke="rgba(122,151,255,0.18)" />
+              <line x1="0" y1="0" x2="-126" y2="-41" stroke="rgba(122,151,255,0.18)" />
+              <polygon points="0,-121 110,-36 62,86 -70,96 -114,-37" fill="rgba(85,167,255,0.22)" stroke="#55a7ff" stroke-width="2" />
+              <circle cx="0" cy="-121" r="4" fill="#55a7ff" />
+              <circle cx="110" cy="-36" r="4" fill="#9a7cff" />
+              <circle cx="62" cy="86" r="4" fill="#2fe4b4" />
+              <circle cx="-70" cy="96" r="4" fill="#ffbd66" />
+              <circle cx="-114" cy="-37" r="4" fill="#ff6f91" />
+              <text x="-44" y="-148">AI 产品化</text>
+              <text x="116" y="-46">Agent/RAG</text>
+              <text x="64" y="128">数据与复盘</text>
+              <text x="-142" y="128">规则建模</text>
+              <text x="-176" y="-46">增长体验</text>
+            </g>
+          </svg>
+        </div>
+        <div class="summary-list">
+          <div class="summary-item"><strong>AI / Skill 产品化</strong><span>Campus Apply Skill</span><p>把投递流程固化为 Skill，并设计安全断点、缺失信息回写和复盘机制。</p></div>
+          <div class="summary-item"><strong>垂直 Agent 产品化</strong><span>AI-KP</span><p>设计 KP 身份、RAG 检索、骰点工具、场景状态、权限分层和大模型生成链路。</p></div>
+          <div class="summary-item"><strong>数据产品拆解</strong><span>My Keep</span><p>把今日记录、月视图、维度数据和知识库串成训练复盘闭环。</p></div>
+          <div class="summary-item"><strong>规则建模</strong><span>双身份狼人杀</span><p>把非标游戏玩法转化为随机生成、约束校验和候选方案输出。</p></div>
+          <div class="summary-item"><strong>轻量增长体验</strong><span>酒瘾人格测试</span><p>围绕小圈层传播设计短链路答题、人格标签和截图讨论点。</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
